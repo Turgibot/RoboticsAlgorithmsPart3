@@ -423,3 +423,25 @@ class Chap6_14(OPU_Slide):
 
         self.wait()
 
+
+class Chap6_15(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 6: Inverse Kinematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("6.2 Numerical Inverse Kinematics", color=BLUE).next_to(title, DOWN).scale(0.4)
+        self.add(title, secondary_title)
+
+
+        txt1= Tex(r"Iterative numerical methods can be applied if the inverse kinematics equations do not admit analytic solutions.").scale(0.45).shift(UP*1.4)
+        txt2= Tex(r"Even in cases where an analytic solution does exist, numerical methods are often used to improve the accuracy of these solutions.").scale(0.45).next_to(txt1, DOWN).align_to(txt1, LEFT+[0.2, 0, 0])
+        txt3= Tex(r"We will make use of an approach fundamental to nonlinear root-finding, the Newton–Raphson method.").scale(0.45).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"We will deal with corner cases where an exact solution may not exist and we seek the closest approximate solution; or, conversely, an infinity of inverse kinematics solutions exists (i.e., if the robot is kinematically redundant)\
+                and we seek a solution that is optimal with respect to some criterion.").scale(0.45).next_to(txt3, DOWN).align_to(txt1, LEFT)
+
+        self.add(txt1, txt2, txt3, txt4)
+
+        self.wait()
+
