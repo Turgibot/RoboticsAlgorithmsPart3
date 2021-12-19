@@ -159,7 +159,7 @@ class Chap6_05(OPU_Slide):
         secondary_title = Text("IK problem definition", color=BLUE).next_to(title, DOWN).scale(0.4)
 
 
-        txt1= Tex(r"before moving in make sure you are familiar with ...").scale(0.5).shift(UP*1.5)
+        txt1= Tex(r"before moving on make sure you are familiar with ...").scale(0.5).shift(UP*1.5)
         txt2= Tex(r"The law of cosines:").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
         txt3= Tex(r"The inverse kinematics problem can be stated as follows:").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
         txt4= Tex(r"Given a homogeneous transform $X \in SE(3)$ ,").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
