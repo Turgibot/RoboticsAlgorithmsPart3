@@ -518,11 +518,72 @@ class Chap6_18(OPU_Slide):
         self.add(title, secondary_title)
 
         txt1= Tex(r"If the Jacobian is not square or singular we cannot compute $J^{-1}$").scale(0.5).shift(UP*1.4)
-        txt2= Tex(r"A solution is to use the pseudoinverse Jacobian $J^{\dagger}$ that return the jacobian inverse if possible or an aproximation if not").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT+[0.2, 0, 0])
+        txt2= Tex(r"A solution is to use the pseudoinverse Jacobian $J^{\dagger}$ that return the jacobian inverse if possible or a close aproximation if not.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT+[0.2, 0, 0])
         txt3= Tex(r"The pseudoinverse can be calculated as:").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
-        # txt4= Tex(r"").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
         grp = Group(txt1, txt2, txt3)
         img1 = ImageMobject('../images/pseudo.png').scale(1.3).next_to(grp,  DOWN)
-        self.add(Group(grp, img1).center())
+        txt4= Tex(r"Replacing the Jacobian inverse with the pseudoinverse gives : $\Delta(\theta) = J^{\dagger}(\theta_0)(x_d - f(\theta_0))$").scale(0.5).next_to(img1, DOWN).align_to(txt1, LEFT)
+        self.add(Group(grp, img1,txt4).center())
 
         self.wait()
+
+class Chap6_19(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 6: Inverse Kinematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("6.2.2 Numerical Inverse Kinematics Algorithm", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        self.add(title, secondary_title)
+
+        txt1= Tex(r"The Newton–Raphson iterative algorithm for finding $\theta_d$", color=GREEN).scale(0.5)
+        img1 = ImageMobject('../images/new.png').scale(1.2).next_to(txt1,  DOWN).shift(RIGHT+DOWN)
+        self.add(Group(img1,txt1).center())
+
+        self.wait()
+
+
+class Chap6_20(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 6: Inverse Kinematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("6.2.2 Numerical Inverse Kinematics Algorithm", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        self.add(title, secondary_title)
+        
+        img1 = ImageMobject('../images/mod.png').scale(1.1)
+        img2 = ImageMobject('../images/fig6.7.png').scale(0.9).next_to(img1,  RIGHT)
+
+        self.add(Group(img1).center().shift(DOWN*0.5))
+
+
+        self.wait()
+
+
+
+class Chap6_21(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 6: Inverse Kinematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("6.2.2 Numerical Inverse Kinematics Algorithm", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        self.add(title, secondary_title)
+        
+        img1 = ImageMobject('../images/algt1.png').scale(1.1)
+        img2 = ImageMobject('../images/algt2.png').scale(1.1).next_to(img1,  DOWN)
+
+        self.add(Group(img2, img1).center().shift(DOWN*0.5))
+
+
+        self.wait()
+
+
+
